@@ -24,8 +24,7 @@ echo 1: (Alpha 54.243.148.13^)
 echo 2: (Beta  52.203.76.119^)
 echo 3: (Gamma 44.206.221.84^)
 echo 4: (Delta 44.207.17.207^)
-set /p selectedinstance=Enter the number of the EC2 instance you wish to connect to: 
-echo %selectedinstance%
+set /p selectedinstance=Enter the number of the EC2 instance you wish to connect to or enter the full IP address you want to connect to: 
 
 if %selectedinstance%==1 (set SELECTED_IP=%ALPHA_IP%
 )	else (
@@ -34,7 +33,7 @@ if %selectedinstance%==1 (set SELECTED_IP=%ALPHA_IP%
 				if %selectedinstance%==3 (set SELECTED_IP=%GAMMA_IP%
 					) 	else (
 							if %selectedinstance%==4 (set SELECTED_IP=%DELTA_IP%
-							)	else goto :instance_choice
+							)	else set SELECTED_IP=%selectedinstance%
 
 		)
 	)

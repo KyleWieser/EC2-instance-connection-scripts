@@ -1,4 +1,5 @@
 #!/bin/sh
+cd -- "$(dirname "$BASH_SOURCE")"
 ALPHA_IP="54.243.148.13"
 BETA_IP="52.203.76.119"
 GAMMA_IP="44.206.221.84"
